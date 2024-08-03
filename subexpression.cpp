@@ -36,6 +36,11 @@ Expression* SubExpression::parse(stringstream& in) {//a + 4)
     
     left = Operand::parse(in);
     in >> operation;
+    //if operation is the negation symbol
+        //don't wait for a second operand, return new negated operator
+    if (operation == '~'){
+        return new Negation(left);
+    }
     right = Operand::parse(in);
     in >> paren;
     switch (operation) {
