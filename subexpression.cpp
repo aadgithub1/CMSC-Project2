@@ -48,6 +48,12 @@ Expression* SubExpression::parse(stringstream& in) {//a + 4)
             return new Remainder(left, right);
         case '^':
             return new Exponentiation(left, right);
+        case '<':
+            return new Minimum(left, right);
+        case '>':
+            return new Maximum(left, right);
+        case '&':
+            return new Average(left, right);
     }
     return 0;
 }
