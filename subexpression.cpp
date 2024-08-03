@@ -20,6 +20,9 @@ using namespace std;
 #include "divide.h"
 #include "remainder.h"
 #include "exponentiation.h"
+#include "minimum.h"
+#include "maximum.h"
+#include "average.h"
 
 SubExpression::SubExpression(Expression* left, Expression* right) {
     this->left = left;
