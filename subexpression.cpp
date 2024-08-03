@@ -24,10 +24,17 @@ using namespace std;
 #include "maximum.h"
 #include "average.h"
 #include "negation.h"
+#include "ternary.h"
 
 SubExpression::SubExpression(Expression* left, Expression* right) {
     this->left = left;
     this->right = right;
+}
+
+SubExpression::SubExpression(Expression* left, Expression* right, Expression* third) {
+    this->left = left;
+    this->right = right;
+    this->third = third;
 }
 
 SubExpression::SubExpression(Expression* left) {
@@ -37,17 +44,20 @@ SubExpression::SubExpression(Expression* left) {
 Expression* SubExpression::parse(stringstream& in) {//a + 4)
     Expression* left;
     Expression* right;
+    Expression* third;
     char operation, paren;
     
     left = Operand::parse(in);
     in >> operation;
-    //if operation is the negation symbol
-        //don't wait for a second operand, return new negated operator
     if (operation == '~'){
         in >> paren;
         return new Negation(left);
     }
+
     right = Operand::parse(in);
+    if (isdigit(in.peek())){
+        third = Operand::parse(in);
+    }
     in >> paren;
     switch (operation) {
         case '+':
@@ -68,6 +78,9 @@ Expression* SubExpression::parse(stringstream& in) {//a + 4)
             return new Maximum(left, right);
         case '&':
             return new Average(left, right);
+        case '?':
+            return new Ternary(left, right, third);
+
     }
     return 0;
 }
