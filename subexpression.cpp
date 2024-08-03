@@ -18,6 +18,8 @@ using namespace std;
 #include "minus.h"
 #include "times.h"
 #include "divide.h"
+#include "remainder.h"
+#include "exponentiation.h"
 
 SubExpression::SubExpression(Expression* left, Expression* right) {
     this->left = left;
@@ -42,6 +44,10 @@ Expression* SubExpression::parse(stringstream& in) {//a + 4)
             return new Times(left, right);
         case '/':
             return new Divide(left, right);
+        case '%':
+            return new Remainder(left, right);
+        case '^':
+            return new Exponentiation(left, right);
     }
     return 0;
 }
