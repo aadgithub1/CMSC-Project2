@@ -4,6 +4,6 @@ public:
     Negation(Expression* left): SubExpression(left) {
     }
     double evaluate() {
-       return -left->evaluate();
+       return -(left->evaluate());
     }
 };

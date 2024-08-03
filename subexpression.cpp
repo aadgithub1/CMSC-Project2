@@ -23,10 +23,15 @@ using namespace std;
 #include "minimum.h"
 #include "maximum.h"
 #include "average.h"
+#include "negation.h"
 
 SubExpression::SubExpression(Expression* left, Expression* right) {
     this->left = left;
     this->right = right;
+}
+
+SubExpression::SubExpression(Expression* left) {
+    this->left = left;
 }
 
 Expression* SubExpression::parse(stringstream& in) {//a + 4)
@@ -39,6 +44,7 @@ Expression* SubExpression::parse(stringstream& in) {//a + 4)
     //if operation is the negation symbol
         //don't wait for a second operand, return new negated operator
     if (operation == '~'){
+        in >> paren;
         return new Negation(left);
     }
     right = Operand::parse(in);
