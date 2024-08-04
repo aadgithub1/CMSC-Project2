@@ -67,7 +67,7 @@ void parseAssignments(stringstream& in) {
         variable = parseName(in);
         in >> ws >> assignop >> value >> delimiter;
 
-		// cout << "assign value: " << value << " delim: " << delimiter;
+		// solved wrong prob re-engage (prolly Variable/SymTab)
 		if (delimiter == '\0'){
 			throw CustomException("Uninitialized variable.");
 		}else if (symbolTable.lookUp(variable) != -1){
