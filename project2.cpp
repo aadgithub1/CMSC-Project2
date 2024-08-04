@@ -70,6 +70,9 @@ void parseAssignments(stringstream& in) {
 		if (delimiter == '\0'){
 			cout << "\nERROR uninitialized variable.";
 			exit(EXIT_FAILURE);
+		}else if (symbolTable.lookUp(variable) != -1){
+			cout << "\nERROR double initialized variable.";
+			exit(EXIT_FAILURE);
 		}
 
         symbolTable.insert(variable, value);
