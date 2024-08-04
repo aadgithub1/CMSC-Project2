@@ -19,5 +19,5 @@ protected:
     Expression* left;
     Expression* right;
     Expression* third;
-    Expression* fourth
+    Expression* fourth;
 };
