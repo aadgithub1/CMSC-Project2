@@ -18,9 +18,20 @@ string parseName(stringstream& in) {
     string name = "";
 
     in >> ws;
-    while (isalnum(in.peek())) {
+    // if (!isalnum(in.peek())){    MAKE SURE CHAR 1 IS ALPHA
+    //     //throw errow
+    //     return "ERROR";
+    // }
+    while (isalnum(in.peek()) || in.peek() == 95) {
         in >> alnum;
         name += alnum;
     }
     return name;
 }
+
+
+//right now parseName will loop and add characters to the
+//variable name so long as they are alphanumeric.
+
+//i want to add chars if they are either alphanumeric OR
+//underscores
