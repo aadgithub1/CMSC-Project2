@@ -65,6 +65,13 @@ void parseAssignments(stringstream& in) {
     do {
         variable = parseName(in);
         in >> ws >> assignop >> value >> delimiter;
+
+		// cout << "assign value: " << value << " delim: " << delimiter;
+		if (delimiter == '\0'){
+			cout << "\nERROR uninitialized variable.";
+			exit(EXIT_FAILURE);
+		}
+
         symbolTable.insert(variable, value);
     }
     while (delimiter == ',');
