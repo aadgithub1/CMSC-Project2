@@ -18,6 +18,7 @@ using namespace std;
 #include "subexpression.h"
 #include "symboltable.h"
 #include "parse.h"
+#include "customexception.h"
 
 SymbolTable symbolTable;
 
@@ -68,13 +69,11 @@ void parseAssignments(stringstream& in) {
 
 		// cout << "assign value: " << value << " delim: " << delimiter;
 		if (delimiter == '\0'){
-			cout << "\nERROR uninitialized variable.";
-			exit(EXIT_FAILURE);
+			throw CustomException("Uninitialized variable.");
 		}else if (symbolTable.lookUp(variable) != -1){
-			cout << "\nERROR double initialized variable.";
-			exit(EXIT_FAILURE);
+			throw CustomException("Double initialized variable.");
 		}
-
+		
         symbolTable.insert(variable, value);
     }
     while (delimiter == ',');
