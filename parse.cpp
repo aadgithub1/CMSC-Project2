@@ -6,6 +6,7 @@
 // This file contains the body of the function parseName. That function consumes all alphanumeric 
 // characters until the next whitespace and returns the name that those characters form.
 
+#include <iostream>
 #include <cctype>
 #include <sstream>
 #include <string>
@@ -18,10 +19,10 @@ string parseName(stringstream& in) {
     string name = "";
 
     in >> ws;
-    // if (!isalnum(in.peek())){    MAKE SURE CHAR 1 IS ALPHA
-    //     //throw errow
-    //     return "ERROR";
-    // }
+    if (!isalnum(in.peek())){
+        cout << "\nERROR: First variable character must be alphanumeric.";
+        exit(EXIT_FAILURE);
+    }
     while (isalnum(in.peek()) || in.peek() == 95) {
         in >> alnum;
         name += alnum;
