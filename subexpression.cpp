@@ -41,7 +41,7 @@ SubExpression::SubExpression(Expression* left) {
     this->left = left;
 }
 
-Expression* SubExpression::parse(stringstream& in) {//a + 4)
+Expression* SubExpression::parse(stringstream& in) {//f ? 1 2 )
     Expression* left;
     Expression* right;
     Expression* third;
@@ -55,7 +55,8 @@ Expression* SubExpression::parse(stringstream& in) {//a + 4)
     }
 
     right = Operand::parse(in);
-    if (isdigit(in.peek())){
+    if (operation == '?'){
+        in >> ws;
         third = Operand::parse(in);
     }
     in >> paren;
