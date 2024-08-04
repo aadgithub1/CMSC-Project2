@@ -25,6 +25,7 @@ using namespace std;
 #include "average.h"
 #include "negation.h"
 #include "ternary.h"
+#include "quaternary.h"
 
 SubExpression::SubExpression(Expression* left, Expression* right) {
     this->left = left;
@@ -37,6 +38,13 @@ SubExpression::SubExpression(Expression* left, Expression* right, Expression* th
     this->third = third;
 }
 
+SubExpression::SubExpression(Expression* left, Expression* right, Expression* third, Expression* fourth) {
+    this->left = left;
+    this->right = right;
+    this->third = third;
+    this->fourth = fourth;
+}
+
 SubExpression::SubExpression(Expression* left) {
     this->left = left;
 }
@@ -45,6 +53,7 @@ Expression* SubExpression::parse(stringstream& in) {//f ? 1 2 )
     Expression* left;
     Expression* right;
     Expression* third;
+    Expression* fourth;
     char operation, paren;
     
     left = Operand::parse(in);
@@ -58,6 +67,11 @@ Expression* SubExpression::parse(stringstream& in) {//f ? 1 2 )
     if (operation == '?'){
         in >> ws;
         third = Operand::parse(in);
+    } else if (operation == '#'){
+        in >> ws;
+        third = Operand::parse(in);
+        in >> ws;
+        fourth = Operand::parse(in);
     }
     in >> paren;
     switch (operation) {
@@ -81,6 +95,8 @@ Expression* SubExpression::parse(stringstream& in) {//f ? 1 2 )
             return new Average(left, right);
         case '?':
             return new Ternary(left, right, third);
+        case '#':
+            return new Quaternary(left, right, third, fourth);
 
     }
     return 0;
