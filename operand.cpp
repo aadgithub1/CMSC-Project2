@@ -24,7 +24,7 @@ using namespace std;
 
 Expression* Operand::parse(stringstream& in) {
     char paren;
-    int value;
+    double value;
 
     in >> ws;
     if (isdigit(in.peek())) {

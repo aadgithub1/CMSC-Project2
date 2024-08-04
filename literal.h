@@ -20,3 +20,5 @@ public:
 private:
     double value;
 };
+
+//i want to make this accept 'unsigned floating point tokens'
