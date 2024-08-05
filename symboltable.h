@@ -14,6 +14,7 @@ public:
     double lookUp(string variable) const;
     void init();
     void addToUsedVarsList(string variable);
+    int validateInitialization();
 private:
     struct Symbol {
         Symbol(string variable, double value) {

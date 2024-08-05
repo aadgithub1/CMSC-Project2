@@ -12,6 +12,7 @@
 using namespace std;
 
 #include "symboltable.h"
+#include "customexception.h"
 
 void SymbolTable::insert(string variable, double value) {
     const Symbol& symbol = Symbol(variable, value);
@@ -32,4 +33,15 @@ void SymbolTable::init(){
 
 void SymbolTable::addToUsedVarsList(string variable){
     usedVariables.push_back(variable);
+}
+
+int SymbolTable::validateInitialization(){
+    for (const auto& variable : usedVariables){
+        for (int i = 0; i < elements.size(); i++){
+            if (elements[i].variable == variable){
+                return 0;
+            }
+        }
+    }
+    throw CustomException("var not init");
 }
