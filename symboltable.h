@@ -12,7 +12,7 @@ public:
     SymbolTable() {}
     void insert(string variable, double value);
     double lookUp(string variable) const;
-    void init() {elements.clear();}
+    void init();
 private:
     struct Symbol {
         Symbol(string variable, double value) {
@@ -23,6 +23,16 @@ private:
         double value;
     };
     vector<Symbol> elements;
+    vector<string>usedVariables;
 };
+
+
+//create a new vector to hold used variables
+
+
+
+
+
+
 
 

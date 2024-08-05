@@ -25,3 +25,8 @@ double SymbolTable::lookUp(string variable) const {
     return -1;
 }
 
+void init(){
+    elements.clear();
+    usedVariables.clear();
+}
+

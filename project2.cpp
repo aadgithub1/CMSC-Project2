@@ -6,7 +6,7 @@
 // This file contains the main function for the project 2 skeleton. It reads an input file named input.txt
 // that contains one statement that includes an expression following by a sequence of variable assignments.
 // It parses each statement and then evaluates it.
-
+#include <typeinfo>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -67,15 +67,16 @@ void parseAssignments(stringstream& in) {
         variable = parseName(in);
         in >> ws >> assignop >> value >> delimiter;
 
-		// solved wrong prob re-engage (prolly Variable/SymTab)
 		if (delimiter == '\0'){
 			throw CustomException("Uninitialized variable.");
 		}else if (symbolTable.lookUp(variable) != -1){
 			throw CustomException("Double initialized variable.");
-		}
-		
+		}		
         symbolTable.insert(variable, value);
     }
     while (delimiter == ',');
 }
    
+//when there are x number of variables
+	//I want to ensure there are x number of var inits
+	//else throw an error
