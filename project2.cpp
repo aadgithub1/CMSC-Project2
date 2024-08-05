@@ -48,7 +48,9 @@ int main() {
 			expression = SubExpression::parse(in);
 			in >> comma;
 			parseAssignments(in);
-			symbolTable.validateInitialization();
+			symbolTable.showElements();
+			symbolTable.showUsed();
+			symbolTable.reconcile();
 			double result = expression->evaluate();
 			cout << "Value = " << result << endl;
 		}

@@ -11,8 +11,10 @@ class Variable: public Operand {
 public:
     Variable(string name) {
         this->name = name;
+        markUsed();
     }
     double evaluate();
+    void markUsed();
 private:
     string name;
 };

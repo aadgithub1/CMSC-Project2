@@ -49,7 +49,7 @@ SubExpression::SubExpression(Expression* left) {
     this->left = left;
 }
 
-Expression* SubExpression::parse(stringstream& in) {//f ? 1 2 )
+Expression* SubExpression::parse(stringstream& in) {//tt + ss)
     Expression* left;
     Expression* right;
     Expression* third;

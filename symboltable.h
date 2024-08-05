@@ -13,8 +13,11 @@ public:
     void insert(string variable, double value);
     double lookUp(string variable) const;
     void init();
-    void addToUsedVarsList(string variable);
-    int validateInitialization();
+    void markUsed(string variable);
+    void showElements();
+    void showUsed();
+    void reconcile();
+
 private:
     struct Symbol {
         Symbol(string variable, double value) {

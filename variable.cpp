@@ -20,3 +20,7 @@ extern SymbolTable symbolTable;
 double Variable::evaluate() {
     return symbolTable.lookUp(name);
 }
+
+void Variable::markUsed(){
+    return symbolTable.markUsed(name);
+}
