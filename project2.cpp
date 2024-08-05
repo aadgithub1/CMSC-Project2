@@ -48,11 +48,14 @@ int main() {
 			expression = SubExpression::parse(in);
 			in >> comma;
 			parseAssignments(in);
+			symbolTable.validateInitialization();
 			double result = expression->evaluate();
 			cout << "Value = " << result << endl;
 		}
 		catch (string message) {
 			cout << message << endl;
+		} catch (const CustomException e){
+			cout << e.what();
 		}
 	}
 	// system("pause");
