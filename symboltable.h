@@ -23,7 +23,7 @@ private:
         double value;
     };
     vector<Symbol> elements;
-    vector<string>usedVariables;
+    vector<string> usedVariables;
 };
 
 
