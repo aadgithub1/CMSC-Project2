@@ -29,3 +29,7 @@ void SymbolTable::init(){
     elements.clear();
     usedVariables.clear();
 }
+
+void SymbolTable::addToUsedVarsList(string variable){
+    usedVariables.push_back(variable);
+}
