@@ -1,7 +1,12 @@
-// CMSC 330 Advanced Programming Languages
-// Project 2 Skeleton
-// UMGC CITE
-// Spring 2023
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class implements a Subexpression as described below
+// with the addition of two additional constructors which allow
+// for additional operands to be utilized and additional include
+// statements which allow the evaluation of expressions
+// by passing the Operands to the associated expression type
+// i.e. Divide
 
 // This file contains the body of the functions contained in The SubExpression class, which includes
 // the constructor that initializes the left and right subexpressions and the static function parse
@@ -80,7 +85,7 @@ Expression* SubExpression::parse(stringstream& in) {//tt + ss)
         case '-':
             return new Minus(left, right);
         case '*':
-            return new Multiplication(left, right);
+            return new Times(left, right);
         case '/':
             return new Divide(left, right);
         case '%':

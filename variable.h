@@ -1,7 +1,10 @@
-// CMSC 330 Advanced Programming Languages
-// Project 2 Skeleton
-// UMGC CITE
-// Spring 2023
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class defines a Variable using the name parameter to
+// set the name name attribute and call the markUsed() function
+// in the constructor to mark the variable as used when it is
+// instantiated
 
 // This file contains the class definition of the Variable class. The variable is represented by its
 // name, which the construcor initializes. Because this class is a subclass of Operand which in turn is 

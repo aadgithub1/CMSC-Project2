@@ -1,7 +1,8 @@
-// CMSC 330 Advanced Programming Languages
-// Project 2 Skeleton
-// UMGC CITE
-// Spring 2023
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class implements a Variable as described below with the addition
+// of the markUsed() function to mark a variable name as used 
 
 // This file contains the body of the function contained in The Variable class. The evaluate function 
 // looks up te value of a variable in the symbol table and returns that value.

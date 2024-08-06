@@ -1,7 +1,7 @@
-// CMSC 330 Advanced Programming Languages
-// Project 2 Skeleton
-// UMGC CITE
-// Spring 2023
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class defines Operand as described below
 
 // This file contains the definition of the Operand class, which is a subclass of Expression. It is an
 // abstract class because it does not implement the evaluate function. It contains one static (class)

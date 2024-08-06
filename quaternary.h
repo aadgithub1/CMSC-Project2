@@ -1,3 +1,8 @@
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class defines a Quaternary expression which evaluates
+// the conditional expression based on the assignment requirements
 
 class Quaternary: public SubExpression {
 public:

@@ -1,4 +1,9 @@
-
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class defines a CustomException.
+// The message of an exception can be specified where
+// thrown in the code to ensure relevant output.
 
 #include <exception>
 #include <string>

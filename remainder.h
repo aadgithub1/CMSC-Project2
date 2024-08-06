@@ -1,3 +1,9 @@
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class defines a remainder expression which returns
+// the division remainder of it constituent expressions
+
 #include <cmath>
 
 class Remainder: public SubExpression {

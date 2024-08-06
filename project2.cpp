@@ -1,7 +1,9 @@
-// CMSC 330 Advanced Programming Languages
-// Project 2 Skeleton
-// UMGC CITE
-// Spring 2023
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class implements the main function and calls
+// on all of the associates classes and header files as
+// detailed below
 
 // This file contains the main function for the project 2 skeleton. It reads an input file named input.txt
 // that contains one statement that includes an expression following by a sequence of variable assignments.

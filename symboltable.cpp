@@ -1,7 +1,12 @@
-// CMSC 330 Advanced Programming Languages
-// Project 2 Skeleton
-// UMGC CITE
-// Spring 2023
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class implements SymbolTable as described below
+// with the addition of init() which ensures both vectors are cleared,
+// markUsed() to mark a variable name as being used in an expression,
+// two show() functions to display each vector, and reconcile()
+// to verify that all variables used in a given expression have been
+// initialized 
 
 // This file contains the body of the functions contained in The SymbolTable class. The insert function 
 // inserts a new variable symbol and its value into the symbol table and the lookUp function returns
@@ -33,7 +38,7 @@ void SymbolTable::init(){
 
 void SymbolTable::markUsed(string variable){
     for (int i = 0; i < usedVariables.size(); i++){
-        if (variable == usedVariables[i]){
+        if (variable == usedVariables[i]){ //do not double add
             return;
         }
     }

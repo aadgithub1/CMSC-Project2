@@ -1,7 +1,9 @@
-// CMSC 330 Advanced Programming Languages
-// Project 2 Skeleton
-// UMGC CITE
-// Spring 2023
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class defines a Literal as described below,
+// edited to accept floating point values rather than just
+// integer values
 
 // This file contains the definition of the Literal class, whose representation consists of the value
 // of the literal. Because both of its functions are one line functions, they are implemented as inline 

@@ -1,7 +1,9 @@
-// CMSC 330 Advanced Programming Languages
-// Project 2 Skeleton
-// UMGC CITE
-// Spring 2023
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class defines Subexpression as described below with
+// the addition of constructors with additional parameters
+// to facilitate conditional expression evaluation
 
 // This file contains the class definition of the SubExpression class, which is a subclass of Expression.
 // Because it does not implement the abstract function evalauate, it is an abstract class. SubExpression

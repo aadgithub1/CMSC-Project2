@@ -1,7 +1,7 @@
-// CMSC 330 Advanced Programming Languages
-// Project 2 Skeleton
-// UMGC CITE
-// Spring 2023
+// Aaron Webb
+// Expression Evaluation Program
+// Aug 06, 2024
+// This class defines SymbolTable
 
 // This file contains the class definition of the SymbolTable class. The symbol table is represented
 // with a vector (list) of type Symbol which is a pair consisting of a variable and its associated value.
