@@ -80,7 +80,7 @@ Expression* SubExpression::parse(stringstream& in) {//tt + ss)
         case '-':
             return new Minus(left, right);
         case '*':
-            return new Times(left, right);
+            return new Multiplication(left, right);
         case '/':
             return new Divide(left, right);
         case '%':

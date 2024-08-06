@@ -48,16 +48,16 @@ int main() {
 			expression = SubExpression::parse(in);
 			in >> comma;
 			parseAssignments(in);
-			symbolTable.showElements();
-			symbolTable.showUsed();
 			symbolTable.reconcile();
 			double result = expression->evaluate();
 			cout << "Value = " << result << endl;
 		}
 		catch (string message) {
 			cout << message << endl;
+			break;
 		} catch (const CustomException e){
 			cout << e.what();
+			break;
 		}
 	}
 	// system("pause");
@@ -73,9 +73,11 @@ void parseAssignments(stringstream& in) {
         in >> ws >> assignop >> value >> delimiter;
 
 		if (delimiter == '\0'){
-			throw CustomException("Uninitialized variable.");
+			throw CustomException("\nERROR: Uninitialized variable.");
+			exit(EXIT_FAILURE);
 		}else if (symbolTable.lookUp(variable) != -1){
-			throw CustomException("Double initialized variable.");
+			throw CustomException("\nERROR: Double initialized variable.");
+			exit(EXIT_FAILURE);
 		}		
         symbolTable.insert(variable, value);
     }

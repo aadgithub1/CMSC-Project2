@@ -56,7 +56,7 @@ void SymbolTable::showUsed(){
 
 void SymbolTable::reconcile(){
     if (usedVariables.size() != elements.size()){
-        throw CustomException("\nERROR: Unitiated elements!");
+        throw CustomException("\nERROR: Uninitialized elements!");
     }
 }
 

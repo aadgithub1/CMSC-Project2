@@ -1,7 +1,7 @@
 
-class Times: public SubExpression {
+class Multiplication: public SubExpression {
 public:
-    Times(Expression* left, Expression* right): SubExpression(left, right) {
+    Multiplication(Expression* left, Expression* right): SubExpression(left, right) {
     }
     double evaluate()  {
        return left->evaluate() * right->evaluate();
